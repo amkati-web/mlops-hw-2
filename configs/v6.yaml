@@ -1,0 +1,18 @@
+﻿display_name: "Sandwich v6 - stronger anti-jailbreak prompt"
+description: "Sandwich guardrail with an improved system prompt focused on jailbreak resistance."
+model:
+  name: nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B
+  temperature: 0.0
+system_prompt: prompts/v6_system.txt
+guardrail:
+  type: sandwich
+  input_classifier:
+    model:
+      name: nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B
+      temperature: 0.0
+    prompt: prompts/classifier_input.txt
+  output_validator:
+    model:
+      name: nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B
+      temperature: 0.0
+    prompt: prompts/classifier_output.txt
